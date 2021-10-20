@@ -10,6 +10,7 @@ interface AuthContextDefault {
     signOut: () => void;
 }
 const authDefault = {
+    id: "",
     username: "",
     image: ""
 };
@@ -21,6 +22,7 @@ export const AuthContext = createContext<AuthContextDefault>({
 });
 
 type AxiosReponse = {
+    id: string;
     username: string;
     image: string;
 }

@@ -10,7 +10,7 @@ type Inputs = {
   password: string,
 };
 
-type AxiosResponse = {
+type ServerData = {
   accessToken: string
 }
 
@@ -29,7 +29,7 @@ const LoginPage = () => {
 
     try {
       setLoading(true)
-      const { data: { accessToken } } = await api().post<AxiosResponse>(`/auth/signin`, payload)
+      const { data: { accessToken } } = await api().post<ServerData>(`/auth/signin`, payload)
       localStorage.setItem('accessToken', accessToken)
       history.push("/");
       authentication();
