@@ -11,7 +11,6 @@ interface AuthContextDefault {
 }
 const authDefault = {
     username: "",
-    email: "",
     image: ""
 };
 
@@ -23,7 +22,6 @@ export const AuthContext = createContext<AuthContextDefault>({
 
 type AxiosReponse = {
     username: string;
-    email: string;
     image: string;
 }
 

@@ -3,7 +3,6 @@ const { TOGGLE_AUTH, SIGN_OUT } = AuthActionType;
 
 interface User {
     username: string;
-    email: string;
     image: string;
 }
 export type AuthState = User;
@@ -20,14 +19,12 @@ export const authReducer = (state: AuthState, action: AuthAction) => {
             return {
                 ...state,
                 username: payload.username,
-                email: payload.email,
                 image: payload.image
             };
         case SIGN_OUT:
             return {
                 ...state,
                 username: "",
-                email: "",
                 image: ""
             };
         default:
